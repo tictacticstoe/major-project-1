@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+        <script src="https://kit.fontawesome.com/d1e9d1ba92.js" crossorigin="anonymous"></script>   
+    </head>
+    <body>
+        <h1 id="page-heading">
+            <i class="fas fa-address-book"></i>
+            ToDo App
+        </h1>
+        <form id="new-todo-task" action="/create-todo" method="POST">
+            <input type="text" name="description" placeholder="description. what do you need to do?" required>
+            <input type="" name="phone" placeholder="Enter Phone Number" required>
+            <input type="date" name="date" placeholder="DueDate" required>
+            <button type="submit">Add Task</button>
+        </form>
+        <div id="contacts-list-container">
+            <ul>
+                <% for(let i of todo_list) { %>
+                <li class="contact">
+                    <div class="details">
+                        <p><%= i.description %></p>
+                        <p><%= i.date %></p>
+                        <p><%= i.category %></p>
+                    </div>  
+                    <div class="delete-button">
+                        <a href="/delete-todo/?id=<%=i.id %>">
+                            <i class="fas fa-window-close"></i>
+                        </a>
+                    </div>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+        <script type="text/javascript" src="/js/home.js"></script>
+    </body>
+</html>
