@@ -1,0 +1,77 @@
+#page-heading{
+    text-align: center;
+    /* margin-top: 25px; */
+    margin: 0px;
+    color:rgb(71, 180, 180);
+    width: 100%;
+	border-bottom:1px solid rgb(105, 102, 102);
+}
+#description{
+    text-align: left;
+    width: 100%;
+    height: 5rem;
+    margin: 0px;
+    padding-top: 0px;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-style: italic;
+}
+#category{
+    text-align: left;
+    width: 40%;
+    height: 5rem;
+    margin: 0px;
+    padding-top: 0px;
+    font-size: 20px;
+    
+    font-family: sans-serif;
+    font-style: italic;
+}
+#date{
+    text-align: left;
+    width: 40%;
+    height: 5rem;
+    margin: 0px;
+    padding-top: 0px;
+    font-size: 20px;
+    font-style: italic;
+}
+#task-container{
+    width: 100%;
+    height: 8rem;
+    margin: 0px;
+    padding-top: 0px;
+    font-size: 15px;
+}
+#submitbutton{
+    align-content: center;
+    height: 4rem;
+    margin: 0px;
+    background-color: rgb(247, 116, 29);
+    padding-top: 0px;
+    font-size: 15px;
+}
+#outer{
+    padding-top: 0px;
+    padding-left: 15rem;
+    padding-right: 15rem;
+    padding-bottom: 15rem;
+    background-color:gray;
+    margin: 0px;
+}
+#inner{
+    background-color: white;
+}
+section{
+    width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+section:nth-child(2n){
+	background-color: #9e9b9b29;
+}
+
+section:nth-child(2n+1){
+	background-color: white;
+}

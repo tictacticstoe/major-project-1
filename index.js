@@ -1,19 +1,25 @@
 const express= require('express');
+const db=require('./config/mongoose');
 const app= express();
 const port= 8000;
 
-const db=require('./config/mongoose');
+
 const todo = require('./models/todo');
+app.use(express.urlencoded());
+
+//using our css file 
+app.use(express.static('./assets'))
 
 //use express router
 app.use('/',require('./routes'));
 
+//use our html file 
 app.set('view engine','ejs');
 app.set('views','./views');
-app.use(express.urlencoded());
-app.use(express.static('assets'))
 
-pp.listen(port,function(err){
+
+
+app.listen(port,function(err){
     if(err)
     {
        // console.log("Error: ",err);

@@ -1,38 +1,61 @@
 <html>
     <head>
+        <script src="https://kit.fontawesome.com/d1e9d1ba92.js" crossorigin="anonymous"></script>  
         <title>
-
-        </title>
-        <script src="https://kit.fontawesome.com/d1e9d1ba92.js" crossorigin="anonymous"></script>   
+            <%= locals.title %>
+        </title> 
+        <link rel="stylesheet" type="text/css" href="/css/home.css">
     </head>
     <body>
-        <h1 id="page-heading">
-            <i class="fas fa-address-book"></i>
+        <div id="outer">
+            <div id="inner">
+        <h1 id='page-heading'>
+            <i class="far fa-clipboard"></i>
             ToDo App
         </h1>
         <form id="new-todo-task" action="/create-todo" method="POST">
-            <input type="text" name="description" placeholder="description. what do you need to do?" required>
-            <input type="text" name="phone" placeholder="Enter Phone Number" required>
-            <input type="date" name="date" placeholder="DueDate" required>
-            <button type="submit">Add Task</button>
+           <div >
+               <input type="text" id="description" name="description" placeholder="Description. What do you need to do?" required>
+            </div>
+            <div>
+                <select id="category" name="category" placeholder="chose a category" required>
+                    <option value="" disabled selected hidden>Choose a category</option>
+                    <option>Personal</option>
+                    <option>work</option>
+                    <option>school</option>
+                    <option>cleaning</option>
+                    <option>other</option>
+                <input type="text" onfocus="(this.type='date')" id="date" name="date" placeholder="DueDate" required>
+            </div>
+               <div id="buttons"> 
+                   <input id="submitbutton" type="submit" value="Add task">
+                </div>
         </form>
-        <div id="contacts-list-container">
+        <div>
             <ul>
+                
                 <% for(let i of todo_list) { %>
-                <li class="contact">
+                    <section>
+                    <li id="task-container">
                     <div class="details">
-                        <p><%= i.description %></p>
-                        <p><%= i.date %></p>
-                        <p><%= i.category %></p>
-                    </div>  
+                        <p><i class="fas fa-pen"></i><%= i.description %></p>
+                        <p>
+                            <i class="far fa-calendar-alt"></i>
+                            <%= i.date%>
+                        </p>
+                        <p><i class="fab fa-battle-net"></i><%= i.category %></p>
+                    </div> 
                     <div class="delete-button">
-                        <a href="/delete-todo/?id=<%=i.id %>">
-                            <i class="fas fa-window-close"></i>
+                        <a href="/delete-todo/?id=<%=i.id %>"> 
+                            <i class="fas fa-trash-alt"></i>
                         </a>
                     </div>
                 </li>
+            </section>
                 <% } %>
             </ul>
         </div>
+    </div>
+    </div>
     </body>
 </html>
